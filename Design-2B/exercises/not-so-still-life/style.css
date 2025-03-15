@@ -1,0 +1,77 @@
+body {
+	background: #000000;
+}
+
+.canvas {
+	width: 1000px;
+	height: 600px;
+	margin: 100px auto;
+	background: white;
+	position: relative;
+}
+
+.triangle {
+	width: 0;
+	height: 0;
+	border-left: 100px solid transparent;
+	border-right: 100px solid transparent;
+	border-bottom: 200px solid yellow;
+	position: absolute;
+	top: 330px;
+	left: 600px;
+	transform: scale(0.5);
+}
+
+.square {
+	width: 100px;
+	height: 100px;
+	background: red;
+	position: absolute;
+	top: 500px;
+	left: 400px;
+}
+
+.circle {
+	width: 200px;
+	height: 200px;
+	background: pink;
+	border-radius: 200px;
+	position: absolute;
+	top: 160px;
+	left: 600px;
+}
+
+#square2 {
+	background: black;
+	width: 300px;
+	height: 30px;	
+}
+.parallelogram {
+      width: 120px;
+      height: 100px;
+      transform: skew(20deg);
+      background: grey;
+      position: absolute;
+      left: 620px;
+      top: 50px;
+    }
+ #diamond {
+      width: 0;
+      height: 0;
+      border: 50px solid transparent;
+      border-bottom-color: red;
+      position: relative;
+      top: -50px;
+    }
+    #diamond:after {
+      content: '';
+      position: absolute;
+      left: -50px;
+      top: 50px;
+      width: 0;
+      height: 0;
+      border: 50px solid transparent;
+      border-top-color: red;
+    }
+  
+  

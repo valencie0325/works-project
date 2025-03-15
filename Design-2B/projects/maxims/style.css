@@ -1,0 +1,74 @@
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: left;
+        }
+        /* 通用样式 */
+        .text {
+            margin: 20px;
+            font-size: 120px;
+            padding: 10px;
+            transition: all 0.3s ease; 
+            cursor: pointer;
+        }
+
+        .effect1 {
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            color: #333;
+        }
+        .effect1:hover {
+            color: #ff5733;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            transform: scale(1.1); /* 放大 */
+        }
+
+        .effect2 {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+            color: #0066cc;
+        }
+        .effect2:hover {
+            color: #00cc66;
+            text-decoration: underline;
+            letter-spacing: 2px;
+        }
+
+        /* 效果3：手写风格+渐变 */
+        .effect3 {
+            font-family: 'Caveat', cursive; 
+            color: #660066;
+        }
+        .effect3:hover {
+            background: linear-gradient(90deg, #ff00cc, #3333ff); 
+            -webkit-background-clip: text;
+            color: transparent;
+            transform: rotate(5deg); 
+        }
+.content {
+  font-family: monospace;
+  color: white;
+  font-size: 14pt;
+  text-transform: uppercase;
+  opacity: 1;
+  margin: 0;
+  padding: 0;
+}
+.line {
+  display: inline-block;
+  margin-right: 10px;
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(0); 
+}
+
+.line:hover {
+  transform: translateX(-100vw);
+  opacity: 0;
+  cursor: none;
+}
