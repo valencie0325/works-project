@@ -1,0 +1,141 @@
+.nav-link {
+	display: inline-block;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-right: 10px;
+}
+body {
+   background-image: url('https://cdn.glitch.global/06fec3ca-fa86-47bb-aa2b-2df1218344a6/Untitled_Artwork%203.png?v=1741417238410'); /* 统一背景 */
+   background-repeat: repeat; /* 平铺 */
+   background-size: 100px 100px;
+  font-family: "Georgia", "Times New Roman", "KaiTi", serif; /* 典雅字体 */
+}
+
+div.static {
+	background-color: blue;
+}
+
+div.relative {
+  background-color: yellow;
+  position: relative;
+}
+
+div.fixed {
+  background-color: purple;
+  position: fixed;
+}
+
+div.absolute {
+  background-color: green;
+  position: absolute;
+}
+
+div.sticky {
+  background-color: red;
+  position: sticky;
+}
+
+.container {
+  display: flex;
+  padding:10px;
+  background-color: seagreen;
+  min-height: 200px;
+}
+
+.container div {
+  margin: 10px 10px;
+  width: 100px;
+  height: 100px;
+  background-color: bisque;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: minmax(max-content, auto) minmax(max-content, auto) minmax(max-content, auto); /* 三列，自适应宽度 */
+  justify-content: start; /* 居左 */
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+}
+
+.board-item{
+
+  width: 400px; /* 元素宽度 */
+  height: 400px; /* 元素高度 */
+  
+  padding: 0px; /* 内边距 */
+  margin: 10px 0; /* 外边距 */
+  
+  display: flex; /* 使用 Flexbox */
+  align-items: flex-start; /* 垂直居中 */
+
+      display: grid;
+      grid-template-columns: 1fr; /* 单列布局 */
+      gap: 10px; /* 每个“总”之间的间距 */
+    }
+
+#tip1{
+   background-image: url('https://cdn.glitch.global/06fec3ca-fa86-47bb-aa2b-2df1218344a6/Untitled_Artwork%204.png?v=1741435511389'); /* 统一背景 */
+ background-size: 400px 400px; /* 背景图片大小 */
+}
+#tip2{
+   background-image: url('https://cdn.glitch.global/06fec3ca-fa86-47bb-aa2b-2df1218344a6/Untitled_Artwork%205.png?v=1741435511389'); /* 统一背景 */
+ background-size: 400px 400px; /* 背景图片大小 */
+}
+#tip3{
+   background-image: url('https://cdn.glitch.global/06fec3ca-fa86-47bb-aa2b-2df1218344a6/Untitled_Artwork%206.png?v=1741435511389'); /* 统一背景 */
+ background-size: 400px 400px; /* 背景图片大小 */
+}
+    /* 一级菜单（总） */
+    .level1 {
+      color: white;
+      padding: 15px;
+      margin-left:40px;
+      margin-top: 70px;
+      font-weight: bold;
+      border-radius: 5px;
+      display: grid; /* 嵌套 Grid 用于子菜单 */
+      grid-template-columns: 1fr; /* 单列 */
+    }
+    /* 二级菜单（分）容器 */
+    .level2 {
+      display: grid;
+      grid-template-columns: 1fr; /* 单列 */
+      gap: 5px; /* 子项间距 */
+      padding-left: 20px; /* 缩进 */
+      padding: 5px;
+    }
+    /* 二级菜单项 */
+    .level2 div {
+      margin-top:5px;
+      padding:3px;
+      color: #333333;
+    }
+
+
+/* 链接样式 */
+    a {
+      text-decoration: none; /* 移除下划线 */
+      color: #2F4F4F; /* 深青色，沉稳 */
+      font-size: 18px;
+      font-weight: 500; /* 中等粗细 */
+      padding: 5px 10px; /* 内边距 */
+      border-bottom: 2px solid transparent; /* 默认无边框 */
+      transition: all 0.3s ease; /* 平滑过渡 */
+      letter-spacing: 1px; /* 字间距，增加优雅感 */
+     font-family: "Comic Sans MS", sans-serif;
+    }
+    /* 悬停效果 */
+    a:hover {
+      color: #8B4513; /* 典雅棕色 */
+      border-bottom: 2px solid #8B4513; /* 下边框出现 */
+    }
+    /* 激活/点击状态 */
+    a:active {
+      color: #5C4033; /* 更深的棕色 */
+    }
+    /* 已访问状态 */
+    a:visited {
+      color: #483D8B; /* 深紫色，庄重 */
+    }

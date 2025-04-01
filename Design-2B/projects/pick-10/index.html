@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>pick-10</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="map-container">
+      <a href="/" class="pin-home" title="HOME">HOME</a>
+      <div onclick="openImg(event)"  class="location-pin pin-a" title="https://cdn.glitch.global/06fec3ca-fa86-47bb-aa2b-2df1218344a6/IMG_3138.JPG?v=1740292011367" >A</div>
+      <div onclick="openImg(event)"  class="location-pin pin-b" title="https://cdn.glitch.global/06fec3ca-fa86-47bb-aa2b-2df1218344a6/IMG_3116.JPG?v=1740291823723" >B</div>
+      <div onclick="openImg(event)"  class="location-pin pin-c" title="https://cdn.glitch.global/06fec3ca-fa86-47bb-aa2b-2df1218344a6/IMG_3135.JPG?v=1740291981700" >C</div>
+      <div onclick="openImg(event)"  class="location-pin pin-d" title="https://cdn.glitch.global/06fec3ca-fa86-47bb-aa2b-2df1218344a6/IMG_3131.JPG?v=1740291928464" >D</div>
+      <div onclick="openImg(event)"  class="location-pin pin-e" title="https://cdn.glitch.global/06fec3ca-fa86-47bb-aa2b-2df1218344a6/IMG_3133.JPG?v=1740291951606" >E</div>
+      <div onclick="openImg(event)"  class="location-pin pin-f" title="https://cdn.glitch.global/06fec3ca-fa86-47bb-aa2b-2df1218344a6/IMG_3136.JPG?v=1740291993231" >F</div>
+      <div onclick="openImg(event)"  class="location-pin pin-g" title="https://cdn.glitch.global/06fec3ca-fa86-47bb-aa2b-2df1218344a6/IMG_3137.JPG?v=1740292002747" >G</div>
+      <div onclick="openImg(event)"  class="location-pin pin-h" title="https://cdn.glitch.global/06fec3ca-fa86-47bb-aa2b-2df1218344a6/IMG_3140.JPG?v=1740292031894" >H</div>
+      <div onclick="openImg(event)"  class="location-pin pin-i" title="https://cdn.glitch.global/06fec3ca-fa86-47bb-aa2b-2df1218344a6/IMG_3141.JPG?v=1740292049107" >I</div>
+       <div onclick="openImg(event)" class="location-pin pin-j" title="https://cdn.glitch.global/06fec3ca-fa86-47bb-aa2b-2df1218344a6/IMG_3132.JPG?v=1740291941245" >J</div>
+      <button onclick="playAudio()">Start</button>
+      
+      <audio id="myAudio" src="https://cdn.glitch.global/06fec3ca-fa86-47bb-aa2b-2df1218344a6/Rutgers%20University%20-%20Edward%20J.%20Bloustein%20School%20Of%20Planning%20And%20Public%20Policy%2022.m4a?v=1741577420260" type="audio/mp4" ></audio>
+      <script>
+
+        const audio = document.getElementById("myAudio");
+
+        function playAudio() {
+            audio.play();
+        }
+        
+        
+        // 创建图片元素
+        const img = document.createElement('img');
+        img.id = 'animatedImage';
+        img.style.display = 'none';
+        document.body.appendChild(img);
+        
+        
+          document.addEventListener('click', function(e) {
+           if( img.style.opacity>0)
+            {
+                img.style.opacity = 0;
+            }
+        });
+        
+        // 监听过渡结束事件
+      img.addEventListener('transitionend', function handler() {
+        console.log("img.style.opacity",img.style.opacity);
+        if (img.style.opacity <1) {
+          img.style.display = 'none'; 
+        }
+      });
+        
+        function openImg(e) {
+            e.preventDefault();
+            e.stopPropagation();
+          
+            if( img.style.opacity>0)
+            {
+             img.style.opacity = 0;
+              return;
+            }
+          audio.play();
+          img.src=e.target.title;
+            // 获取点击位置
+            const clickX = e.clientX;
+            const clickY = e.clientY;
+            console.log(" clickX,clickY  ",clickX,clickY);
+            // 设置初始位置和大小
+            img.style.left = clickX + 'px';
+            img.style.top = clickY + 'px';
+            img.style.width = '0px';
+            img.style.height = '0px';
+            img.style.opacity = '0';
+
+            img.style.display = 'block';
+          
+            // 使用 requestAnimationFrame 来创建平滑动画
+            requestAnimationFrame(() => {
+                // 设置目标位置（右上角）
+                const targetWidth = 500; // 目标宽度
+                const targetHeight = 500; // 目标高度
+                const targetX = window.innerWidth - targetWidth -45; // 距离右边20px
+                const targetY = window.pageYOffset+25; // 距离顶部20px
+
+                // 应用动画最终状态
+                img.style.width = targetWidth + 'px';
+                img.style.height = targetHeight + 'px';
+                img.style.left = targetX + 'px';
+                img.style.top = targetY + 'px';
+                img.style.opacity = '1';
+            });
+        }
+      </script>
+    </div>
+  </body>
+</html>

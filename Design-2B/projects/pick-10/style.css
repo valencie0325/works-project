@@ -1,0 +1,144 @@
+span {
+
+
+    box-sizing: border-box;
+   white-space: pre-wrap;
+   background-color: bisque;
+   
+} 
+body {
+     margin: 0;
+    padding: 0;
+   height: 100%;
+       background-image: url('https://cdn.glitch.global/06fec3ca-fa86-47bb-aa2b-2df1218344a6/Untitled_Artwork%20copy%202.jpg?v=1740306888930/150x100'); /* 统一背景 */
+  background-position: center; /* 居中 */
+      background-size: 1200px auto; 
+      background-repeat: no-repeat;
+   background-color: bisque;
+} 
+
+#animatedImage {
+            position: absolute;
+            opacity: 0;
+            transition: all 1s ease-in-out;
+  border: 8px groove #6b451bb8; /* 米白色内衬边框 */
+            background: #FFFFFF; 
+  box-shadow: 8px 10px 20px rgba(0, 0, 0, 0.5); 
+        }
+
+.hotspot{
+  cursor:grab;
+}
+.map-container {
+  margin: 0 auto; 
+  width:1200px;
+  height:900px;
+}
+.map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+.location-pin-home {
+    width: 80px; 
+    height: 80px;
+    background: url('pin-icon.png') no-repeat center / contain;
+    text-decoration: none; 
+    display: block;
+    transition: all 0.3s ease; 
+    border-radius: 100%; 
+}
+.location-pin-home:hover {
+    transform: scale(1.2);
+    background: linear-gradient(45deg, rgba(255, 0, 0, 0.7), rgba(0, 0, 255, 0.7)) 
+                url('pin-icon.png') no-repeat center / contain;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+}
+.location-pin-home:active {
+    transform: scale(0.9);
+}
+.location-pin {
+    width: 40px; 
+    height: 40px;
+    position:relative;
+    background: url('pin-icon.png') no-repeat center / contain;
+    text-decoration: none; 
+    display: flex;
+cursor: grab; /* 隐藏光标 */
+  justify-content: center; 
+  align-items: center;
+    transition: all 0.3s ease; 
+    border-radius: 50%; 
+  user-select: none;
+  color:darkorange;
+}
+.location-pin:focus {
+      caret-color: transparent; /* 聚焦时隐藏光标 */
+    }
+.location-pin:hover {
+    transform: scale(1.2);
+    background: linear-gradient(45deg, rgba(255, 0, 0, 0.7), rgba(0, 0, 255, 0.7)) 
+                url('pin-icon.png') no-repeat center / contain;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+  
+   justify-content: center; 
+  align-items: center;
+}
+.location-pin:active {
+    transform: scale(0.9);
+   justify-content: center; 
+  align-items: center;
+  caret-color: transparent;
+}
+.pin-home {
+    top: 20px; 
+    left: 30px;
+  margin:5px;
+  position:relative;
+}
+.pin-0 {
+    top: 430px; 
+    left: 580px;
+}
+.pin-a {
+    top: 530px;
+    left: 225px;
+}
+.pin-b {
+    top: 450px;
+    left: 390px;
+}
+.pin-c {
+    top: 405px;
+    left: 515px;
+}
+.pin-d {
+    top:350px;
+    left: 585px;
+}
+.pin-e {
+    top: 330px;
+    left: 670px;
+}
+.pin-f {
+    top: 465px;
+    left: 225px;
+}
+.pin-g {
+    top: 400px;
+    left: 330px;
+}
+.pin-h {
+    top: 350px;
+    left: 430px;
+}
+
+.pin-i {
+    top: 350px;
+    left: 500px;
+}
+
+.pin-j {
+    top: 215px;
+    left: 715px;
+}

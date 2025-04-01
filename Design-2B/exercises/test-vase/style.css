@@ -1,0 +1,162 @@
+body {
+	background: #cccccc;
+}
+
+.canvas {
+	width: 1000px;
+	height: 600px;
+	margin: 100px auto;
+	background: rgb(239, 253, 255);
+	position: relative;
+}
+
+.triangle {
+	width: 0;
+	height: 0;
+	border-left: 100px solid transparent;
+	border-right: 100px solid transparent;
+	border-bottom: 200px solid rgb(198, 235, 214);
+	position: absolute;
+	left: 400px;
+}
+
+#vase-bottom {
+	bottom: 110px;
+	transform: scale(0.8);
+}
+
+#vase-top {
+	transform: rotate(180deg) scale(0.5);
+	bottom: 160px;
+}
+
+
+#square2 {
+	background: green;
+	width: 50px;
+	height: 300px;	
+}
+
+#table {
+	position: absolute;
+	bottom: 100px;
+	left: 100px;
+	width: 800px;
+	height: 30px;
+	background: rgb(114, 60, 43);
+}
+
+.table-leg {
+	background: rgb(114, 60, 43);
+	height: 100px;
+	width: 40px;
+	position: absolute;
+	bottom: 0;
+}
+
+#leg1 {
+	left: 200px;
+}
+
+#leg2 {
+	right: 200px;
+}
+
+#stem {
+	background: green;
+	width: 10px;
+	height: 200px;
+	position: absolute;
+	bottom: 180px;
+	left: 495px;
+}
+
+#flower {
+	position: absolute;
+	left: 452px;
+	top: 135px;
+	width: 100px;
+	height: 100px;
+	transform: rotate(30deg);
+}
+
+.petal {
+	width: 50px;
+	height: 50px;
+	background: pink;
+	border-radius: 50px;
+	position: absolute;
+}
+
+#petal1 {
+	left: 0;
+	top: 0;
+}
+
+#petal2 {
+	top: 0;
+	right: 0;
+}
+
+#petal3 {
+	bottom: 0;
+	left: 0;
+}
+
+#petal4 {
+	bottom: 0;
+	right: 0;
+}
+
+#center {
+	background: yellow;
+	top: 25px;
+	left: 25px;
+}
+
+#leaf {
+	width: 90px;
+	height: 180px;
+	background-color: green;
+	border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+	position: absolute;
+	top: 173px;
+	left: 496px;
+	transform: rotate(60deg) scale(0.5);
+  }
+
+#droplet {
+	width: 50px;
+	height: 50px;
+	border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+	position: absolute;
+	transform: rotate(-90deg) scale(0.9);
+	left: 486px;
+	top: 192px;
+	background: rgb(69, 153, 255);
+	animation: fall 1.2s infinite cubic-bezier(.89,.04,1,.62);
+}
+
+@keyframes fall {
+	0% {
+		top: 192px;
+		opacity: 0;
+	}
+
+	10% {
+		opacity: 1;
+	}
+
+	45% {
+		opacity: 1;
+	}
+
+	50% {
+		top: 440px;
+		opacity: 0;
+	}
+
+	100% {
+		top: 440px;
+		opacity: 0;
+	}
