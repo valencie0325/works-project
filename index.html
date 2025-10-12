@@ -13,6 +13,17 @@
             color: #fff;
             font-family: Arial, sans-serif;
         }
+        #header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            text-align: center;
+            background: rgba(0,0,0,0.5);
+            padding: 10px;
+            z-index: 1000;
+            font-size: 18px;
+            font-weight: bold;
+        }
         #danmaku-container {
             position: relative;
             width: 100vw;
@@ -73,7 +84,7 @@
         }
         #status {
             position: absolute;
-            top: 10px;
+            top: 60px; /* Adjusted to below header */
             left: 10px;
             z-index: 1000;
             color: #fff;
@@ -84,6 +95,7 @@
     </style>
 </head>
 <body>
+    <div id="header">Thanks for sharing your healthy thoughts and insights</div>
     <div id="danmaku-container"></div>
     <div id="status">Listening to speech...</div>
 
