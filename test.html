@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>语音识别飘动弹幕</title>
+	<style>
+		body {
+			background: #000;
+			color: #fff;
+			font-family: Arial, sans-serif;
+			margin: 0;
+			overflow: hidden;
+		}
+
+		#danmaku {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+		}
+
+		.danmaku-text {
+			position: absolute;
+			white-space: nowrap;
+			font-size: 24px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="danmaku"></div>
+	<script>
+		const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+		recognition.lang = 'en-US';
+		recognition.continuous = true;
+		recognition.interimResults = false;
+
+		recognition.onresult = (event) =>
+		{
+			const transcript = event.results[event.results.length - 1][0].transcript;
+			addDanmaku(transcript);
+		};
+
+		recognition.onerror = (event) => console.error('Error:', event.error);
+		recognition.onend = () => recognition.start();
+
+		function addDanmaku(text)
+		{
+			const danmaku = document.createElement('div');
+			danmaku.className = 'danmaku-text';
+			danmaku.textContent = text;
+			danmaku.style.left = `${Math.random() * (window.innerWidth - 100)}px`;
+			danmaku.style.top = `${Math.random() * (window.innerHeight - 50)}px`;
+			document.getElementById('danmaku').appendChild(danmaku);
+
+			let vx = (Math.random() - 0.5) * 4;
+			let vy = (Math.random() - 0.5) * 4;
+			const animate = () =>
+			{
+				let x = parseFloat(danmaku.style.left);
+				let y = parseFloat(danmaku.style.top);
+				x += vx;
+				y += vy;
+
+				if (x <= 0 || x >= window.innerWidth - danmaku.offsetWidth) vx = -vx;
+				if (y <= 0 || y >= window.innerHeight - danmaku.offsetHeight) vy = -vy;
+
+				danmaku.style.left = `${x}px`;
+				danmaku.style.top = `${y}px`;
+				requestAnimationFrame(animate);
+			};
+			requestAnimationFrame(animate);
+		}
+
+		recognition.start();
+	</script>
+</body>
+
+</html>
